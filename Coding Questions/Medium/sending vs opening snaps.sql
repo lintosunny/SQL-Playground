@@ -58,9 +58,9 @@
 WITH cte_activities AS (
   SELECT
     age_breakdown.age_bucket,
-    SUM(CASE WHEN activities.activity_type = 'open' THEN time_spent ELSE 0) AS time_open,
-    SUM(CASE WHEN activities.activity_type = 'send' THEN time_spent ELSE 0) AS time_send,
-    SUM(CASE WHEN activities.activity_type = 'send' OR activities.activity_type = 'open' THEN time_spent ELSE 0) AS time_total
+    SUM(CASE WHEN activities.activity_type = 'open' THEN time_spent ELSE 0 END) AS time_open,
+    SUM(CASE WHEN activities.activity_type = 'send' THEN time_spent ELSE 0 END) AS time_send,
+    SUM(CASE WHEN activities.activity_type = 'send' OR activities.activity_type = 'open' THEN time_spent ELSE 0 END) AS time_total
   FROM activities
   LEFT JOIN age_breakdown
     ON activities.user_id = age_breakdown.user_id
@@ -68,7 +68,7 @@ WITH cte_activities AS (
 )
 
 SELECT
-  age_breakdown.age_bucket,
-  time_send::DECIMAL / time_toal * 100 AS send_perc,
-  time_open::DECIMAL / time_total * 100 AS open_perc
+  age_bucket,
+  ROUND(time_send::DECIMAL / time_total * 100, 2) AS send_perc,
+  ROUND(time_open::DECIMAL / time_total * 100, 2) AS open_perc
 FROM cte_activities;
