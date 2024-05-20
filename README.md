@@ -7,6 +7,7 @@ https://github.com/lintosunny/SQL-Playground.git
 ```
 
 ## Directory Structure
+```
 SQL-Playground/
 -- │
 -- ├── tutorials/
@@ -17,6 +18,7 @@ SQL-Playground/
 -- │   └── hard/
 -- │
 -- └── README.md
+```
 
 ## ❓ Coding Questions
 Sharpen your SQL skills with our coding questions, categorized by difficulty:
