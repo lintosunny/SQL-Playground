@@ -8,15 +8,15 @@ https://github.com/lintosunny/SQL-Playground.git
 
 ## Directory Structure
 SQL-Playground/
-│
-├── tutorials/
-│
-├── questions/
-│   ├── easy/
-│   ├── medium/
-│   └── hard/
-│
-└── README.md
+-- │
+-- ├── tutorials/
+-- │
+-- ├── questions/
+-- │   ├── easy/
+-- │   ├── medium/
+-- │   └── hard/
+-- │
+-- └── README.md
 
 ## ❓ Coding Questions
 Sharpen your SQL skills with our coding questions, categorized by difficulty:
