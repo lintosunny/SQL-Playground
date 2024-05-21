@@ -18,6 +18,7 @@ SQL-Playground/
 │
 └── README.md
 
+
 ## ❓ Coding Questions
 Sharpen your SQL skills with our coding questions, categorized by difficulty:
 * Easy: Basic SQL queries to get you started.
