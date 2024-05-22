@@ -1,4 +1,4 @@
-# SQL-Playground
+# SQL Playground
 Welcome to the **SQL Coding Questions & Tutorials** repository! This project aims to help beginners and seasoned developers alike enhance their SQL skills through a series of practical exercises and comprehensive tutorials.
 
 ## Getting Started
