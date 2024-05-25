@@ -20,6 +20,12 @@ SQL-Playground/
 -- └── README.md
 ```
 
+## 📖 Tutorial
+Browse through the tutorials directory to find topics of interest. Each tutorial is organized by category. 
+<br>The tutorial section complements our coding questions by providing in-depth explanations, step-by-step guides, and practical examples.
+* Basics: querying databases, filtering data, and performing joins.
+* Advanced: subqueries, aggregate functions, and table manipulation.
+* Optimization: indexing tables, and improving database performance.
 
 ## ❓ Coding Questions
 Sharpen your SQL skills with our coding questions, categorized by difficulty:
