@@ -1,4 +1,0 @@
-Text | Slides | Connecting to SQL Server
-Text | Slides | Creating, altering and dropping a database
-Text | Slides | Creating and working with tables
-Text | Slides | Default Constraint
