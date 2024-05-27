@@ -58,17 +58,12 @@ Select * from fn_MSTVF_GetEmployees()
 
 
 -- Comparison: Inline TVFs vs Multi-Statement TVFs
--- +----------------------------------------------------------+----------------------------------------------------+
--- | Inline Table Valued Functions                             | Multi-Statement Table Valued Functions              |
--- +----------------------------------------------------------+----------------------------------------------------+
--- | do not include the table structure in the RETURNS clause;  | specify the structure of the table to be returned in the RETURNS clause.  |
--- |           |      |
--- |    |                                                    |
--- +----------------------------------------------------------+----------------------------------------------------+
--- | 2. Inline TVFs do not use BEGIN and END blocks; they      | 2. Multi-statement TVFs can use BEGIN and END      |
--- |    directly return data.                                  |    blocks for more complex logic and processing.   |
--- +----------------------------------------------------------+----------------------------------------------------+
--- | 3. Inline TVFs tend to have better performance compared   | 3. Multi-statement TVFs may have slightly lower    |
--- |    to multi-statement TVFs due to their direct data       |    performance compared to inline TVFs due to the  |
--- |    return approach.                                      |    additional processing steps.                    |
--- +----------------------------------------------------------+----------------------------------------------------+
+-- +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+-- | Inline Table Valued Functions                                 | Multi-Statement Table Valued Functions                                        |
+-- +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+-- | do not include the table structure in the RETURNS clause;     | specify the structure of the table to be returned in the RETURNS clause.      |
+-- +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+-- | do not use BEGIN and END blocks; they directly return data    | can use BEGIN and END blocks for more complex logic and processing.           |
+-- +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+-- | better performance due to their direct data   return approach | may have slightly lower performance due to the additional processing steps.   |
+-- +---------------------------------------------------------------+-------------------------------------------------------------------------------+
