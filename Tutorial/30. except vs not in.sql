@@ -1,3 +1,8 @@
+-- EXCEPT vs NOT IN
+-- 1. EXCEPT filters duplicates and returns distinct rows, whereas NOT IN doesn't filter the results
+-- 2. EXCEPT expects the same number of columns in both tables,
+--    NOT IN compares a single column in the outer query with a single column in a subquery.
+
 -- TableA
 -- +----+--------+--------+
 -- | Id | Name   | Gender |
@@ -46,8 +51,3 @@ WHERE Id NOT IN (
 -- | 1  | Mark   | Male   |
 -- | 1  | Mark   | Male   |
 -- +----+--------+--------+
-
--- EXCEPT vs NOT IN
--- 1. EXCEPT filters duplicates and return distinct rows, where as NOT IN doesn't filter the results
--- 2. EXCEPT expects same number of columns in both tables,
---    NOT IN compares a single column in outer query with a single column in subquery.
