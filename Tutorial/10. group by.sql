@@ -39,6 +39,5 @@ HAVING city = 'Chicago';
 -- | Aggregate functions cannot be used directly | Aggregate functions can be used directly    | 
 -- +---------------------------------------------+---------------------------------------------+
 
-
-
-
+-- From a performance standpoint, HAVING is slower than WHERE and should be avoided when possible.
+-- because, WHERE filters data before grouping, and HAVING filters data after grouping.
