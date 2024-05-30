@@ -92,3 +92,38 @@ FROM employees;
 -- | 9  | Ben    | Male   | 6500   | 6333    |
 -- | 10 | Jodi   | Female | 7000   | 6750    |
 -- +----+--------+--------+--------+---------+
+
+
+
+-- ROW vs RANGE
+-- ROWS treats duplicates as distinct values, whereas RANGE treats them as a single entity.
+
+-- employee_salary
+-- +--------+--------+
+-- | Name   | Salary |
+-- +--------+--------+
+-- | Todd   | 1000   |
+-- | Sara   | 1000   |
+-- | John   | 3000   |
+-- | Mark   | 3000   |
+-- | Pam    | 5000   |
+-- +--------+--------+
+
+-- Query
+SELECT
+  Name, Salary,
+  SUM(Salary) OVER(ORDER BY Salary) AS [Default],
+  SUM(Salary) OVER(ORDER BY Salary RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS [Range],
+  SUM(Salary) OVER(ORDER BY Salary ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS [Rows]
+FROM employee_salary;
+
+-- Expected output
+-- +--------+--------+---------+--------+--------+
+-- | Name   | Salary | Default | Range  | Rows   |
+-- +--------+--------+---------+--------+--------+
+-- | Todd   | 1000   | 2000    | 2000   | 1000   |
+-- | Sara   | 1000   | 2000    | 2000   | 2000   |
+-- | John   | 3000   | 8000    | 8000   | 5000   |
+-- | Mark   | 3000   | 8000    | 8000   | 8000   |
+-- | Pam    | 5000   | 13000   | 13000  | 13000  |
+-- +--------+--------+---------+--------+--------+
