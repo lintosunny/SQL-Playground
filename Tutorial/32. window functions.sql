@@ -53,21 +53,42 @@ SELECT
 FROM employees;
 
 -- Example output
--- +-------+---------+---------+---------+
--- |  Name |  Gender |  Salary | Average |
--- +-------+---------+---------+---------+
--- |  Mark |  Male   | 5000    | 5150    |
--- |  John |  Male   | 4500    | 5150    |
--- |  Pam  |  Female | 5500    | 5150    |
--- |  Sara |  Female | 4000    | 5150    |
--- |  Todd |  Male   | 3500    | 5150    |
--- |  Mary |  Female | 5000    | 5150    |
--- |  Ben  |  Male   | 6500    | 5150    |
--- |  Jodi |  Female | 7000    | 5150    |
--- |  Tom  |  Male   | 5500    | 5150    |
--- |  Ron  |  Male   | 5000    | 5150    |
--- +-------+---------+---------+---------+
+-- +----+--------+--------+--------+---------+
+-- | Id | Name   | Gender | Salary | Average |
+-- +----+--------+--------+--------+---------+
+-- | 1  | Todd   | Male   | 3500   | 5150    |
+-- | 2  | Sara   | Female | 4000   | 5150    |
+-- | 3  | John   | Male   | 4500   | 5150    |
+-- | 4  | Mark   | Male   | 5000   | 5150    |
+-- | 5  | Mary   | Female | 5000   | 5150    |
+-- | 6  | Ron    | Male   | 5000   | 5150    |
+-- | 7  | Pam    | Female | 5500   | 5150    |
+-- | 8  | Tom    | Male   | 5500   | 5150    |
+-- | 9  | Ben    | Male   | 6500   | 5150    |
+-- | 10 | Jodi   | Female | 7000   | 5150    |
+-- +----+--------+--------+--------+---------+
 
 
 
--- average salary of 
+
+-- average salary of current row, and one row above and below current row
+SELECT 
+  Name, Gender, Salary
+  AVG(Salary) OVER(ORDER BY Salary ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS Average
+FROM employees;
+
+-- Example output
+-- +----+--------+--------+--------+---------+
+-- | Id | Name   | Gender | Salary | Average |
+-- +----+--------+--------+--------+---------+
+-- | 1  | Todd   | Male   | 3500   | 3750    |
+-- | 2  | Sara   | Female | 4000   | 4000    |
+-- | 3  | John   | Male   | 4500   | 4500    |
+-- | 4  | Mark   | Male   | 5000   | 4833    |
+-- | 5  | Mary   | Female | 5000   | 5000    |
+-- | 6  | Ron    | Male   | 5000   | 5167    |
+-- | 7  | Pam    | Female | 5500   | 5333    |
+-- | 8  | Tom    | Male   | 5500   | 5833    |
+-- | 9  | Ben    | Male   | 6500   | 6333    |
+-- | 10 | Jodi   | Female | 7000   | 6750    |
+-- +----+--------+--------+--------+---------+
