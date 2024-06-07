@@ -29,9 +29,9 @@ Browse through the tutorials directory to find topics of interest. Each tutorial
 
 ## ❓ Coding Questions
 Sharpen your SQL skills with our coding questions, categorized by difficulty:
-* Easy: Basic SQL queries to get you started.
-* Medium: Intermediate-level challenges to test your skills.
-* Hard: Complex problems to push your limits.
+* Easy: Basic SQL queries to get you started
+* Medium: Intermediate-level challenges to test your skills
+* Hard: Complex problems to push your limits
 
 Each question includes:
 * A detailed problem statement
