@@ -17,6 +17,8 @@ SQL-Playground/
 -- │   ├── medium/
 -- │   └── hard/
 -- │
+-- ├── projects/
+-- │
 -- └── README.md
 ```
 
@@ -36,3 +38,6 @@ Sharpen your SQL skills with our coding questions, categorized by difficulty:
 Each question includes:
 * A detailed problem statement
 * Input and output examples
+
+## 💻 Projects
+Explore real-world SQL projects in the projects/ directory. These projects provide hands-on experience with SQL in various applications and scenarios, helping you apply your SQL skills in practical, impactful ways.
